@@ -16,12 +16,14 @@ app.get('/api/health-events', getHealthEvents);
 app.post('/api/add-manual-event', addManualEvent);
 app.post('/api/process-image', processImage);
 
-
 app.get('/', (req, res) => {
   res.send('Hello from backend!');
 });
 
+// Use Render's port, or 5000 for local development
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, '192.168.100.56', () => {
-  console.log(`Server running on port ${PORT} and listening on all network interfaces`);
+
+// Listen on all available network interfaces
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server is running on port ${PORT}`);
 });
