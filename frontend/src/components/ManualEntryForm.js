@@ -53,7 +53,7 @@ const ManualEntryForm = ({ onSuccess, onCancel }) => {
     }
 
     try {
-        await axios.post('${process.env.REACT_APP_API_URL}/api/add-manual-event', payload);
+        await axios.post(`${process.env.REACT_APP_API_URL}/api/add-manual-event`, payload);
         // For manual entry, we construct a simple result object for the results screen
         const manualResult = {
             sys: sys || null,
