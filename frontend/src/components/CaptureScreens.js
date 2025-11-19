@@ -20,7 +20,7 @@ const CaptureScreen = ({ setAppState, onSuccess, onError, error, debugImage }) =
       const formData = new FormData();
       formData.append('image', imageFile);
 
-      const response = await axios.post('http://192.168.100.56:5000/api/process-image', formData, {
+      const response = await axios.post('${process.env.REACT_APP_API_URL}/api/process-image', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
